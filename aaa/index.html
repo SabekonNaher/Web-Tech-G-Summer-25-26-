@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Heart</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffe6f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #message {
+            font-size: 35px;
+            font-weight: bold;
+            color: #ff1744;
+            margin-bottom: 70px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        #message.show {
+            opacity: 1;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background: #ff1744;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: auto;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background: #ff1744;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 50px;
+        }
+
+        .heart:hover {
+            transform: rotate(-45deg) scale(1.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="message">
+            I LOVE YOU ❤️
+        </div>
+
+        <div class="heart" onclick="showLove()"></div>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById("message").classList.add("show");
+        }
+    </script>
+
+</body>
+</html>
