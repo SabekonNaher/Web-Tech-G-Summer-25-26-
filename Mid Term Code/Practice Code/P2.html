@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <title>Online Food Ordering System</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:papayawhip;
+
+        }
+
+        h1 {
+            text-align: center;
+            background-color: orangered;
+            color: white;
+            padding: 15px;
+            border: 3px solid brown;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: darkred;
+            font-weight: bold;
+        }
+
+        p:hover {
+            color: blue;
+        }
+
+        form {
+            width: 60%;
+            margin: auto;
+            border: 3px solid #ff6600;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        fieldset {
+            border: 2px solid gray;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #ff6600;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .input-style {
+            padding: 8px;
+            border-radius: 5px;
+            background-color: lightgray;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            background-color: lightyellow;
+        }
+
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            font-size: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        input[type="reset"] {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Online Food Ordering System</h1>
+
+    <p>Order your favorite food online.</p>
+
+    <center>
+        <a href="https://www.foodpanda.com" target="_blank">
+            Visit Food Website
+        </a>
+    </center>
+
+    <br><br>
+
+    <form>
+
+        <fieldset>
+            <legend>Customer Information</legend>
+
+            <label>Customer Name:</label>
+            <input class="input-style" type="text"
+                   placeholder="Enter your name">
+            <br><br>
+
+            <label>Email:</label>
+            <input class="input-style" type="email"
+                   placeholder="Enter your email">
+            <br><br>
+
+            <label>Phone Number:</label>
+            <input class="input-style" type="tel"
+                   placeholder="01XXXXXXXXX">
+            <br><br>
+
+            <label>Delivery Address:</label><br>
+            <textarea rows="4" cols="40"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Food Selection</legend>
+
+            <label>Select Food Item:</label>
+
+            <select>
+                <option>Pizza</option>
+                <option>Burger</option>
+                <option>Fried Rice</option>
+                <option>Pasta</option>
+                <option>Chicken BBQ</option>
+            </select>
+
+            <br><br>
+
+            <label>Quantity:</label>
+            <input type="number" min="1" max="10">
+
+            <br><br>
+
+            <label>Extra Items:</label><br>
+
+            <input type="checkbox"> Cheese
+            <input type="checkbox"> French Fries
+            <input type="checkbox"> Soft Drink
+            <input type="checkbox"> Salad
+        </fieldset>
+
+        <fieldset>
+            <legend>Payment Method</legend>
+
+            <input type="radio" name="payment"> Cash on Delivery <br>
+            <input type="radio" name="payment"> Credit Card <br>
+            <input type="radio" name="payment"> Mobile Banking
+
+            <br><br>
+
+            <label>Delivery Date:</label>
+            <input type="date">
+        </fieldset>
+
+        <input type="submit" value="Place Order">
+        <input type="reset" value="Cancel Order">
+
+    </form>
+
+</body>
+</html>
+

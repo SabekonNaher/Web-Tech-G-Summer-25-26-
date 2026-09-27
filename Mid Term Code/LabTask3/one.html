@@ -1,0 +1,119 @@
+function validateForm() {
+
+    // Username Validation
+    var usernameInput = document.getElementById("username");
+    var usernameRegex = /^[a-z0-9]+$/i;
+
+    if (usernameInput.value.length < 4 || usernameInput.value.length > 20) {
+        document.getElementById("username_error").innerText = "Username must be 4-20 characters";
+        return false;
+    }
+
+    if (!usernameRegex.test(usernameInput.value)) {
+        document.getElementById("username_error").innerText = "Only letters and numbers allowed";
+        return false;
+    }
+
+    document.getElementById("username_error").innerHTML = "✓ Valid Username";
+
+
+    // Email Validation
+    var emailInput = document.getElementById("email");
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailInput.value)) {
+        document.getElementById("email_error").innerText = "Invalid Email";
+        return false;
+    }
+
+    document.getElementById("email_error").innerHTML = "✓ Valid Email";
+
+
+    // Password Validation
+    var passwordInput = document.getElementById("password");
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/;
+
+    if (passwordInput.value.length < 8) {
+        document.getElementById("password_error").innerText = "Minimum 8 characters";
+        return false;
+    }
+
+    if (!passwordRegex.test(passwordInput.value)) {
+        document.getElementById("password_error").innerText =
+        "Need uppercase, lowercase, number & special character";
+        return false;
+    }
+
+    if (passwordInput.value.length >= 17) {
+        document.getElementById("strength").innerText = "Strength : Strong";
+    }
+    else if (passwordInput.value.length >= 13) {
+        document.getElementById("strength").innerText = "Strength : Medium";
+    }
+    else {
+        document.getElementById("strength").innerText = "Strength : Weak";
+    }
+
+    document.getElementById("password_error").innerHTML = "✓ Valid Password";
+
+
+    // Confirm Password Validation
+    var confirmPasswordInput = document.getElementById("confirmPassword");
+
+    if (passwordInput.value != confirmPasswordInput.value) {
+        document.getElementById("confirm_password_error").innerText =
+        "Passwords do not match";
+        return false;
+    }
+
+    document.getElementById("confirm_password_error").innerHTML =
+    "✓ Passwords Match";
+
+
+    // Phone Validation
+    var phoneInput = document.getElementById("phone");
+    var phoneRegex = /^\d{11}$/;
+
+    if (!phoneRegex.test(phoneInput.value)) {
+        document.getElementById("phone_error").innerText =
+        "Phone must be 11 digits";
+        return false;
+    }
+
+    document.getElementById("phone_error").innerHTML = "✓ Valid Phone";
+
+
+    // Date of Birth Validation
+    var dobInput = document.getElementById("dob");
+
+    if (dobInput.value == "") {
+        document.getElementById("dob_error").innerText = "Select Date";
+        return false;
+    }
+
+    document.getElementById("dob_error").innerHTML = "✓ Valid";
+
+
+    // Gender Validation
+    var gender = document.querySelector('input[name="gender"]:checked');
+
+    if (gender == null) {
+        document.getElementById("gender_error").innerText = "Select Gender";
+        return false;
+    }
+
+    document.getElementById("gender_error").innerHTML = "✓ Selected";
+
+
+    // Terms Validation
+    var termsInput = document.getElementById("terms");
+
+    if (!termsInput.checked) {
+        document.getElementById("terms_error").innerText = "Accept Terms";
+        return false;
+    }
+
+    document.getElementById("terms_error").innerHTML = "✓ Accepted";
+
+    return true;
+}

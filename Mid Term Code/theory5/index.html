@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		table, th,td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+	</style>
+	<table id="my-table">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+		</tr>
+	</table>
+	<script>
+		var data = [
+			["Person 1", "Email 1"],
+			["Person 2", "Email 2"],
+			["Person 3", "Email 3"],
+			["Person 4", "Email 4"],
+		];
+
+		for (i = 0; i < data.length; i++) {
+			var table = document.getElementById("my-table");
+			var row = document.createElement("tr");
+			var td1 = document.createElement("td");
+			var td2 = document.createElement("td");
+			td1.innerText = data[i][0];
+			td2.innerText = data[i][1];
+
+			row.appendChild(td1);
+			row.appendChild(td2);
+			table.appendChild(row);
+		}
+
+
+	</script>
+</body>
+</html>

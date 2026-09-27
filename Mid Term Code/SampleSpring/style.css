@@ -1,0 +1,89 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    margin:0;
+    padding:0;
+}
+
+header{
+    background-color: darkblue;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+.container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin:30px;
+}
+
+fieldset{
+    border:2px solid steelblue;
+}
+
+legend{
+    font-weight:bold;
+    color:darkblue;
+}
+
+form{
+    background:white;
+    border:2px solid gray;
+    border-radius:10px;
+    padding:20px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,
+select,textarea{
+    width:100%;
+    padding:8px;
+    border:1px solid gray;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+input:focus,
+select:focus,textarea:focus{
+    background-color:lightyellow;
+}
+
+button{
+    padding:10px 20px;
+    background:green;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:darkgreen;
+}
+
+#address_error{
+    color:red;
+    font-size:14px;
+}
+#submitBtn{
+    display:none;
+}
+
+#coupon{
+    color:green;
+    font-weight:bold;
+}
+
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color:darkblue;
+    color:white;
+    text-align:center;
+    padding:10px;
+}

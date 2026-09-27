@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+<body>
+
+    <h1 id="title">Welcome to JavaScript</h1>
+
+    <p id="message">Click the button to update this page.</p>
+
+    <table>
+        <tr id="studentRow">
+            <td>John</td>
+            <td>85</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <button id="changeBtn">Update Page</button>
+
+    <script>
+        // Select HTML elements
+        var title = document.getElementById("title");
+        var message = document.getElementById("message");
+        var button = document.getElementById("changeBtn");
+
+        // Button click event
+        button.addEventListener("click", () => {
+
+            // Change heading
+            title.innerText = "JavaScript is Awesome!";
+
+            // Change paragraph
+            message.innerText = "The page has been updated.";
+
+            // Change table row
+            var row = document.getElementById("studentRow");
+            row.innerHTML = "<th>Name</th><th>Marks</th>";
+
+            // Function call
+            console.log("Addition:", addNumbers(10, 20));
+
+            // Arrow function call
+            console.log("Multiplication:", multiply(5, 6));
+
+            // If-Else Example
+            var marks = 75;
+
+            if (marks >= 50) {
+                console.log("Pass");
+            } else {
+                console.log("Fail");
+            }
+
+            // Ternary Operator
+            console.log(marks >= 50 ? "Student Passed" : "Student Failed");
+        });
+
+        // Normal Function
+        function addNumbers(a, b) {
+            return a + b;
+        }
+
+        // Arrow Function
+        var multiply = (a, b) => a * b;
+
+    </script>
+
+</body>
+</html>

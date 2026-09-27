@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My E-commerce Site</title>
+ 
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+ 
+<body>
+ 
+<header>
+    <h1>My E-commerce Site</h1>
+</header>
+ 
+<div class="container">
+ 
+    <!-- Add to Cart -->
+    <fieldset>
+        <legend>Add to Cart</legend>
+        <form>
+ 
+        <label>Product Name</label><br>
+        <input type="text" value="Wireless Mouse" readonly>
+        <br><br>
+ 
+        <label>Unit Price</label><br>
+        <input type="text" id="price" value="500" readonly>
+        <br><br>
+ 
+        <label>Quantity</label><br>
+        <input type="number" id="quantity" value="1" onchange="calculateTotal()">
+        <br>
+        <span class="error" id="quantity_error"></span>
+        <br><br>
+ 
+        <label>Total Price</label><br>
+        <input type="text" id="total" readonly>
+        <br><br>
+ 
+        <span id="coupon_message"></span>
+        </form>
+ 
+    </fieldset>
+ 
+    <!-- Checkout -->
+    <fieldset>
+ 
+        <legend>Checkout Form</legend> 
+
+        <form onsubmit="return validateForm();">
+ 
+            <label>Shipping Address</label><br>
+ 
+            <textarea id="address" rows="4" cols="30"></textarea>
+            <br>
+ 
+            <span class="error" id="address_error"></span>
+ 
+            <br><br>
+ 
+            <label>Delivery Location</label><br>
+ 
+            <select id="delivery" onchange="deliveryCharge()">
+                <option value="50">Delivery Inside Dhaka</option>
+                <option value="120">Delivery Outside Dhaka</option>
+            </select>
+ 
+            <br><br>
+ 
+            <label>Grand Total</label><br>
+ 
+            <input type="text" id="grandTotal" readonly>
+ 
+            <br><br>
+ 
+            <input
+                type="checkbox"
+                id="agree"
+                onchange="showButton()">I agree to all the terms and conditions
+            <br><br>
+            <input
+                type="submit"
+                id="submitBtn"
+                value="Submit"
+                style="display:none;">
+ 
+        </form>
+    </fieldset>
+ 
+</div>
+ 
+<footer>
+    Copyright@2026
+</footer>
+ 
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Marks</title>
+     <script src="script.js"></script>
+</head>
+<body>
+
+    <h2>Student Information</h2>
+
+    <form onsubmit="return validateForm();">
+        <label>Student Name:</label><br>
+        <input type="text" id="name">
+        <span id="name_error" style="color:red;"></span>
+        <br><br>
+
+        <label>Marks:</label><br>
+        <input type="text" id="marks">
+        <span id="marks_error" style="color:red;"></span>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+
+    <table border="1" id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Marks</th>
+        </tr>
+    </table>
+
+    
+
+</body>
+</html>

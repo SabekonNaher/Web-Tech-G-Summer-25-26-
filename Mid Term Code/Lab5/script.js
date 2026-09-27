@@ -1,0 +1,23 @@
+// alert("Alert from JS");
+// int a = 5;
+var a;
+console.log(typeof(a));
+console.log(a);
+a = 5;
+console.log(typeof(a));
+console.log(a);
+a = false;
+console.log(typeof(a));
+console.log(a);
+a = "str";
+console.log(typeof(a));
+console.log(a);
+// console.log("test");
+var s = "My name is John";
+var s = 'My name is John';
+var s = 'My name is "John"';
+var s = "My name is 'John'";
+var s = "The restaurant restaurant name is \"Domino's Pizza\"";
+console.log(s.length);
+var s2 = s.replaceAll("restaurant","shop");
+console.log(s2)

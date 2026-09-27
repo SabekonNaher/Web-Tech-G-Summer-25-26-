@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+</head>
+<body>
+
+    <h1 id="heading">Student Result System</h1>
+
+    <p id="result">Result will appear here.</p>
+
+    <table border="1">
+        <tr id="student">
+            <td>Name</td>
+            <td>Marks</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <button id="checkBtn">Check Result</button>
+
+    <script>
+
+        // Select HTML elements
+        var heading = document.getElementById("heading");
+        var result = document.getElementById("result");
+        var button = document.getElementById("checkBtn");
+
+        // Button Click Event
+        button.addEventListener("click", () => {
+
+            heading.innerText = "Result Published";
+
+            result.innerText = "Checking student result...";
+
+            var student = document.getElementById("student");
+            student.innerHTML = "<th>Student</th><th>Grade</th>";
+
+            // Function Call
+            console.log("Average =", average(80, 90));
+
+            // Arrow Function
+            console.log("Square =", square(5));
+
+            // If-Else
+            var marks = 82;
+
+            if (marks >= 50) {
+                console.log("Pass");
+            } else {
+                console.log("Fail");
+            }
+
+            // Ternary Operator
+            console.log(marks >= 80 ? "Excellent" : "Good");
+
+        });
+
+        // Normal Function
+        function average(a, b) {
+            return (a + b) / 2;
+        }
+
+        // Arrow Function
+        var square = (n) => n * n;
+
+    </script>
+
+</body>
+</html>

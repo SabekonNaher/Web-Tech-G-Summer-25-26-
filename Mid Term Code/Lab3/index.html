@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="./styles.css">
+	</head>
+	<body style="">
+		<!-- Internal CSS (needs <style> tag) -->
+		<style>
+			form {
+				border: 3px solid green;
+			}
+		</style>
+		<h1 id="my-heading">Welcome to Web Tech</h1>
+		<h1>HTML, CSS, JS</h1>
+		<h2>Summer 25</h2>
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem molestiae odit quia nisi ab aliquid inventore at dolorum blanditiis, nemo eligendi cumque. Exercitationem velit vitae totam eveniet aut itaque voluptates.</p>
+		<p>Paragraph 2</p>
+
+		<a href="https://www.cursor.ai" target="_blank">Cursor AI</a>
+		<br>
+		<a href="https://www.claude.ai" target="_self">Claude AI</a>
+		<br>
+		<a href="https://www.google.com">Google</a>
+
+		<form action="submit-form.php" method="post" enctype="multipart/form-data">
+			<fieldset style="">
+				<legend>Names</legend>
+				<label>First Name:</label>
+				<input class="input-style" type="text" id="firstName" name="fn" value="John">
+				<br>
+				<br>
+				<label>Last Name:</label>
+				<input class="input-style" type="text" id="lastName" name="ln" placeholder="Enter your last name">
+				<br>
+				<br>
+			</fieldset>
+			<!-- Inline CSS (needs style attribute) -->
+			<label style="color: red; background: purple;">Email:</label>
+			<input class="input-style" type="email" id="email" name="email">
+			<br>
+			<br>
+			<label>Password:</label>
+			<input type="password" id="pass" name="pass">
+			<br>
+			<br>
+			Age: <input type="number" min="0" max="100" value="0">
+			<br>
+			<br>
+			Range: <input type="range">
+			<br>
+			<br>
+			<input type="radio" id="male_radio" name="gender"> Male
+			<br>
+			<input type="radio" id="female_radio" name="gender"> Female
+			<br>
+			<input type="radio" id="other_radio" name="gender"> Other
+			<br>
+			<br>
+			<input type="checkbox" name="terms" id="terms"> Agree to terms and conditions?
+			<br>
+			<br>
+			<input type="file">
+			<br>
+			<br>
+			<input type="hidden" value="my-secret-value">
+			<br>
+			<br>
+			<select>
+				<option value="m">Male</option>
+				<option value="f">Female</option>
+				<option value="o">Other</option>
+			</select>
+			<br>
+			<br>
+			<textarea name="" id=""></textarea>
+			<br>
+			<br>
+			<input type="submit">
+			<input type="reset">
+		</form>
+	</body>
+	<script>
+		var fn = document.getElementById("firstName")
+		fn.addEventListener("click", () => {
+			alert("First name input field clicked");
+		})
+	</script>
+</html>

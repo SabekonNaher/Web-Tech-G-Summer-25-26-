@@ -1,0 +1,59 @@
+body
+{
+    margin:0;
+    font-family:Arial, sans-serif;
+}
+ 
+header
+{
+    background-color:steelblue;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+ 
+.container
+{
+    display:flex;
+    justify-content:space-around;
+    margin:30px;
+}
+ 
+fieldset
+{
+    width:400px;
+    padding:20px;
+}
+ 
+input,
+textarea,
+select
+{
+    width:100%;
+    padding:8px;
+    box-sizing:border-box;
+}
+ 
+.error
+{
+    color:red;
+    font-size:14px;
+}
+ 
+#coupon_message
+{
+    color:green;
+    font-weight:bold;
+}
+ 
+footer
+{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:15px;
+ 
+    position:fixed;
+    bottom:0;
+    width:100%;
+}

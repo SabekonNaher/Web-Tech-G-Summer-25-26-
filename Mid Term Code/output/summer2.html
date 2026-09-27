@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Output Question</title>
+</head>
+<body>
+ 
+<script>
+    let userAge = "25";
+    let bonusPoints = "10";
+    let scores = [80, 85, 90, 95, 100];
+ 
+    // String concatenation
+    console.log("Total: " + userAge + bonusPoints);
+ 
+    // String divided by number
+    document.write("Avg: " + userAge / 5 + "<br>");
+ 
+    // String subtraction (automatic conversion)
+    let position = userAge - bonusPoints;
+    console.log("Score[" + position + "]: " + scores[position]);
+ 
+    // Boolean expression
+    let isEligible = scores.length > 3;
+ 
+    // Ternary operator
+    let bonus = isEligible ? bonusPoints : 0;
+ 
+    document.write("Eligible: " + isEligible + "<br>");
+ 
+    // Convert string to integer
+    let convertedAge = parseInt(userAge);
+ 
+    // Strict comparison
+    console.log("Match: " + (userAge === convertedAge)); //userage string type bt covertage integer type that's why false
+ 
+    // Remove last element
+    let removedScore = scores.pop();
+ 
+    document.write("Type: " + typeof removedScore + "<br>");
+ 
+    console.log("Count: " + scores.length); //one element was pop that why count is 4 instead of 5
+ 
+    // String to float
+    let scoreString = "98.7";
+    let decimal = parseFloat(scoreString);
+ 
+    document.write("Sub: " + scoreString.substring(0, 2) + "<br>"); // substring (0,2) means start with 0 and ends before 2
+ 
+    // Undefined and null
+    let undefinedVar;
+    let nullVar = null;
+ 
+    console.log("Undef: " + typeof undefinedVar);
+ 
+    // Array index out of bounds
+    let outOfBounds = scores[10] || "missing";
+ 
+    document.write("OOB: " + scores[10] + "<br>");
+</script>
+ 
+</body>
+</html>
+ 

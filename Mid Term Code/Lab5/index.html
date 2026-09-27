@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="./script.js">
+	</script>
+</head>
+<body>
+	<h1 id="heading">Hello JS</h1>
+	<table>
+		<tr id="my_row">
+			<td>item 1</td>
+			<td>item 2</td>
+		</tr>
+	</table>
+
+	<button id="my_btn">Click me to change HTML elements</button>
+	<script>
+		document.addEventListener("DOMContentLoaded", ()=>{
+			//document.writeln("TEST Doc Write"); // NEED EVENT LISTENER
+		});
+	</script>
+	<script>
+		var my_h1 = document.getElementById("heading");
+		console.log(my_h1);
+		var my_button = document.getElementById("my_btn");
+		my_button.addEventListener("click", () => {
+			my_h1.innerText = "test";
+
+			var my_row = document.getElementById("my_row");
+			my_row.innerHTML = "<th>heading 1</th><th>heading 2</th>";
+		});
+		// () => {}
+
+
+		// returnType functionName (parameters) {body}
+		// function functionName (paramenter) {body}
+
+		function addTwoNumbers (n1, n2) {
+			var sum = n1 + n2;
+			return sum;
+		}
+
+		function addTwoNumbers (n1, n2) {
+			return n1 + n2;
+		}
+
+		var addTwoNumbers = () => {
+			var sum = n1 + n2;
+			return sum;	
+		}
+
+		var addTwoNumbers = () => n1+n2;
+
+
+		var a = 2;
+		var b = 3;
+		if (a == b) {
+			console.log("a and b is equal");
+		} else {
+			console.log("a and b is NOT equal");
+		}
+
+		console.log((a == b) ? "a and b is equal" : "a and b is NOT equal");
+		// (condition) ? (if true) : (if false)
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Course Feedback --Summer 2025-26</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color: beige;
+            padding: 40px;
+        }
+
+         h1{
+            text-align: center;
+            margin: 30px;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            border: 3px solid black;
+            padding: 20px;
+            background-color: bisque;
+        }
+        .label {
+              font-weight: bold;
+        }
+
+        form input,
+        form select,
+        form textarea,
+        form button{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid white;
+        }
+
+        .help{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: white;
+            border: 1px solid #444;
+        }
+
+        button[type="submit"]{
+            background-color:black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        button[type="submit"]:hover{
+            background-color:brown;
+        }
+
+</style>
+</head>
+<body>
+    <header>
+         <h1>Course Feedback--Summer 2025-26</h1>
+    </header>
+<form action="submit-form.php" method="post" enctype="multipart/form-data">
+
+
+        <label>Course Name</label> <br>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label >Student ID</label> <br>
+        <input type="text" id="studentid" name="studentid">
+        <br><br>
+        <label >Overall rating</label> <br>
+        <select id="rating" name="rating">
+            <option>Excellent</option>
+            <option>Very Good</option>
+            <option>Good</option>
+            <option>Moderate</option>
+            <option>Bad</option>
+        </select>
+        <br> <br>
+        <label>Comments:</label><br>
+        <textarea rows="5" cols="30"></textarea>
+        <br><br>
+        <button type="submit">Submit Feedback</button>
+
+</form>
+        <button class="help">? Help</button>
+</body>
+</html>

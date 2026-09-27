@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Registration</title>
+ 
+<style>
+body{
+    font-family:Arial, sans-serif;
+    margin:30px;
+}
+ 
+label{
+    display:block;
+    margin-top:12px;
+}
+ 
+input{
+    padding:8px;
+    width:280px;
+}
+ 
+.error{
+    color:red;
+    font-size:12px;
+    display:block;
+    margin-top:3px;
+}
+ 
+.success{
+    color:green;
+    font-size:12px;
+    display:block;
+    margin-top:3px;
+}
+ 
+.valid{
+    border:2px solid green;
+}
+ 
+.invalid{
+    border:2px solid red;
+}
+ 
+#strength{
+    font-weight:bold;
+}
+</style>
+ 
+</head>
+ 
+<body>
+ 
+<h1>User Registration</h1>
+ 
+<form id="registerForm">
+ 
+<label>Username</label>
+<input type="text" id="username">
+<span id="usernameError" class="error"></span>
+ 
+<label>Email</label>
+<input type="text" id="email">
+<span id="emailError" class="error"></span>
+ 
+<label>Password</label>
+<input type="password" id="password">
+<div id="strength"></div>
+<span id="passwordError" class="error"></span>
+ 
+<label>Confirm Password</label>
+<input type="password" id="confirmPassword">
+<span id="confirmError" class="error"></span>
+ 
+<label>Phone Number</label>
+<input type="text" id="phone">
+<span id="phoneError" class="error"></span>
+ 
+<label>Date of Birth</label>
+<input type="date" id="dob">
+<span id="dobError" class="error"></span>
+ 
+<label>Gender</label>
+ 
+<input type="radio" name="gender" value="Male">Male
+<input type="radio" name="gender" value="Female">Female
+ 
+<span id="genderError" class="error"></span>
+ 
+<br><br>
+ 
+<input type="checkbox" id="terms">
+I agree to Terms & Conditions
+<span id="termsError" class="error"></span>
+ 
+<br><br>
+ 
+<input type="submit" id="submitBtn" value="Register" disabled>
+ 
+</form>
+ 
+<script>
+ 
+const username=document.getElementById("username");
+const email=document.getElementById("email");
+const password=document.getElementById("password");
+const confirmPassword=document.getElementById("confirmPassword");
+const phone=document.getElementById("phone");
+const dob=document.getElementById("dob");
+const terms=document.getElementById("terms");
+const submitBtn=document.getElementById("submitBtn");
+ 
+function showError(input,id,msg){
+ 
+document.getElementById(id).innerHTML="✗ "+msg;
+document.getElementById(id).className="error";
+ 
+input.classList.remove("valid");
+input.classList.add("invalid");
+ 
+}
+ 
+function showSuccess(input,id,msg){
+ 
+document.getElementById(id).innerHTML="✓ "+msg;
+document.getElementById(id).className="success";
+ 
+input.classList.remove("invalid");
+input.classList.add("valid");
+ 
+}
+ 
+function clearMessage(id){
+document.getElementById(id).innerHTML="";
+}
+ 
+function validateUsername(){
+ 
+let value=username.value.trim();
+let regex=/^[a-z0-9]+$/i;
+ 
+if(value.length<4 || value.length>20){
+ 
+showError(username,"usernameError","Username must be 4-20 characters");
+ 
+return false;
+ 
+}
+ 
+if(!regex.test(value)){
+ 
+showError(username,"usernameError","Only letters and numbers allowed");
+ 
+return false;
+ 
+}
+ 
+showSuccess(username,"usernameError","Valid Username");
+ 
+return true;
+ 
+}
+ 
+function validateEmail(){
+ 
+let regex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+ 
+if(!regex.test(email.value.trim())){
+ 
+showError(email,"emailError","Invalid Email");
+ 
+return false;
+ 
+}
+ 
+showSuccess(email,"emailError","Valid Email");
+ 
+return true;
+ 
+}
+ 
+function validatePassword(){
+ 
+let value=password.value;
+ 
+let regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/;
+ 
+if(value.length<8){
+ 
+showError(password,"passwordError","Minimum 8 characters");
+ 
+document.getElementById("strength").innerHTML="";
+ 
+return false;
+ 
+}
+ 
+if(!regex.test(value)){
+ 
+showError(password,"passwordError","Need uppercase, lowercase, number & special character");
+ 
+document.getElementById("strength").innerHTML="";
+ 
+return false;
+ 
+}
+ 
+if(value.length>=17){
+ 
+document.getElementById("strength").innerHTML="Strength : Strong";
+ 
+}
+ 
+else if(value.length>=13){
+ 
+document.getElementById("strength").innerHTML="Strength : Medium";
+ 
+}
+ 
+else{
+ 
+document.getElementById("strength").innerHTML="Strength : Weak";
+ 
+}
+ 
+showSuccess(password,"passwordError","Valid Password");
+ 
+return true;
+ 
+}
+ 
+function validateConfirm(){
+ 
+if(confirmPassword.value!==password.value){
+ 
+showError(confirmPassword,"confirmError","Passwords do not match");
+ 
+return false;
+ 
+}
+ 
+showSuccess(confirmPassword,"confirmError","Passwords Match");
+ 
+return true;
+ 
+}
+ 
+function validatePhone(){
+ 
+let regex=/^\d{11}$/;
+ 
+if(!regex.test(phone.value)){
+ 
+showError(phone,"phoneError","Phone must be 11 digits");
+ 
+return false;
+ 
+}
+ 
+showSuccess(phone,"phoneError","Valid Phone");
+ 
+return true;
+ 
+}
+ 
+function validateDOB(){
+ 
+if(dob.value==""){
+ 
+document.getElementById("dobError").innerHTML="✗ Select Date";
+ 
+return false;
+ 
+}
+ 
+document.getElementById("dobError").innerHTML="✓ Valid";
+ 
+document.getElementById("dobError").className="success";
+ 
+return true;
+ 
+}
+ 
+function validateGender(){
+ 
+let gender=document.querySelector('input[name="gender"]:checked');
+ 
+if(gender==null){
+ 
+document.getElementById("genderError").innerHTML="✗ Select Gender";
+ 
+return false;
+ 
+}
+ 
+document.getElementById("genderError").innerHTML="✓ Selected";
+ 
+document.getElementById("genderError").className="success";
+ 
+return true;
+ 
+}
+ 
+function validateTerms(){
+ 
+if(!terms.checked){
+ 
+document.getElementById("termsError").innerHTML="✗ Accept Terms";
+ 
+return false;
+ 
+}
+ 
+document.getElementById("termsError").innerHTML="✓ Accepted";
+ 
+document.getElementById("termsError").className="success";
+ 
+return true;
+ 
+}
+ 
+function checkForm(){
+ 
+if(
+validateUsername() &&
+validateEmail() &&
+validatePassword() &&
+validateConfirm() &&
+validatePhone() &&
+validateDOB() &&
+validateGender() &&
+validateTerms()
+){
+ 
+submitBtn.disabled=false;
+ 
+}
+else{
+ 
+submitBtn.disabled=true;
+ 
+}
+ 
+}
+ 
+username.addEventListener("input",checkForm);
+email.addEventListener("input",checkForm);
+password.addEventListener("input",checkForm);
+confirmPassword.addEventListener("input",checkForm);
+phone.addEventListener("input",checkForm);
+dob.addEventListener("input",checkForm);
+terms.addEventListener("change",checkForm);
+ 
+document.querySelectorAll('input[name="gender"]').forEach(r=>{
+r.addEventListener("change",checkForm);
+});
+ 
+document.querySelectorAll("input").forEach(i=>{
+ 
+i.addEventListener("focus",function(){
+ 
+let id=i.id+"Error";
+ 
+if(document.getElementById(id))
+clearMessage(id);
+ 
+});
+ 
+i.addEventListener("blur",checkForm);
+ 
+});
+ 
+document.getElementById("registerForm").addEventListener("submit",function(e){
+ 
+e.preventDefault();
+ 
+alert("Registration Successful!");
+ 
+});
+ 
+</script>
+ 
+</body>
+</html>

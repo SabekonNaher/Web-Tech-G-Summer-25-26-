@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stack Push Pop Example</title>
+</head>
+ 
+<body>
+ 
+<div id="container">
+    <button id="PUSH">PUSH</button>
+    <button id="POP">POP</button>
+ 
+    <div id="status">Empty</div>
+</div>
+ 
+ 
+<script>
+ 
+const status = document.getElementById("status");
+const PUSH = document.getElementById("PUSH");
+const POP = document.getElementById("POP");
+ 
+let stack = [];
+let totalPushes = 0;
+ 
+ 
+// Update status according to stack length
+function updateStatus() {
+ 
+    let len = stack.length;
+ 
+    if (len === 0) {
+        status.innerHTML = "Empty";
+    }
+    else if (len === 1) {
+        status.innerHTML = "First";
+    }
+    else if (len % 2 === 0) {
+        status.innerHTML = "Even";
+    }
+    else {
+        status.innerHTML = "Odd";
+    }
+ 
+}
+ 
+ 
+// Add element to stack
+function handlePush() {
+ 
+    totalPushes++;
+ 
+    stack.push(totalPushes);
+ 
+    updateStatus();
+ 
+}
+ 
+ 
+// Remove element from stack
+function handlePop() {
+ 
+    if (stack.length > 0) {
+        stack.pop();
+    }
+ 
+    updateStatus();
+ 
+}
+ 
+ 
+// Button events
+PUSH.addEventListener("click", handlePush);
+ 
+POP.addEventListener("click", handlePop);
+ 
+ 
+</script>
+ 
+</body>
+</html>

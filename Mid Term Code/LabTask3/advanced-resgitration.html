@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="script.js"></script>
+        <title>Advanced Registration Form</title>
+    </head>
+    <body>
+        <style>
+
+            body{
+            font-family: Arial, sans-serif;
+            background-color:white;
+            padding: 40px;
+        }
+            .error {
+                color: red;
+                font-size: smaller;
+            }
+
+            form{
+            max-width: 500px;
+            margin: auto;
+            border: 2px solid black;
+            padding: 20px;
+            background-color: white;
+        }
+            label{
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        
+        </style>
+        <form onsubmit="return validateForm();" action="submit.html" method="post">
+            <label for="Username">Username:</label>
+            <input type="text" id="username" name="username" >
+            <span class="error" id="username_error"></span>
+            <br />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span class="error" id="email_error"></span>
+            <br />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span class="error" id="password_error"></span>
+            <br />
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password">
+            <span class="error" id="confirm_password_error"></span>
+            <br />
+            <label for="PhoneNumber">Phone Number:</label>
+            <input type="number" id="phone" name="PhoneNumber">
+            <span class="error" id="PhoneNumber_error"></span>
+            <br>
+            <label for="DateoBirth">Date of Birth:</label>
+            <input type="Date" id="DateoBirth" name="DateoBirth">
+            <span class="error" id="DateoBirth_error"></span>
+            <br>
+            <label for="Gender"> Gender:</label> <br>
+            <input type="radio" id="male_radio" name="gender"> Male
+			
+			<input type="radio" id="female_radio" name="gender"> Female
+			
+			<input type="radio" id="other_radio" name="gender"> Other
+			<br>
+			<br>
+			<input type="checkbox" name="terms" id="terms"> I accept the Terms & conditions
+			<br> <br>
+            <input type="submit" value="Register" id="submitBtn">
+
+        </form>
+
+    <script>
+    function validateForm() {     
+    var usernameInput = document.getElementById("username");
+    var pattern = /^[a-z0-9]+$/i;
+
+    if (usernameInput.value.length < 4 || usernameInput.value.length > 20) {
+        document.getElementById("username_error").innerText = "Username must be 4-20 characters";
+        return false;
+    }
+
+    if (!pattern.test(usernameInput.value)) {
+        document.getElementById("username_error").innerText = "Only letters and numbers allowed";
+        return false;
+    }
+
+    document.getElementById("username_error").innerHTML = "Valid Username";
+
+    var emailInput = document.getElementById("email");
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailInput.value)) {
+        document.getElementById("email_error").innerText = "Invalid Email";
+        return false;
+    }
+    var passwordInput = document.getElementById("password");
+    var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/;
+
+    if (passwordInput.value.length < 8) {
+        document.getElementById("password_error").innerText = "Minimum 8 characters";
+        return false;
+    }
+    if (!passwordPattern.test(passwordInput.value)) {
+        document.getElementById("password_error").innerText =
+        "your password must contain uppercase, lowercase, number & special character";
+        return false;
+    }
+
+    if (passwordInput.value.length >= 17) {
+        document.getElementById("strength").innerText = "Strength : Strong";
+    }
+    else if (passwordInput.value.length > 13 & passwordInput.value.length < 16) {
+        document.getElementById("strength").innerText = "Strength : Medium";
+    }
+    else {
+        document.getElementById("strength").innerText = "Strength : Weak";
+    }
+    document.getElementById("password_error").innerHTML = "Valid Password";
+
+    var confirmPasswordInput = document.getElementById("confirmPassword");
+    if (passwordInput.value != confirmPasswordInput.value) {
+        document.getElementById("confirm_password_error").innerText =
+        "Passwords do not match";
+        return false;
+    }
+
+    var phoneInput = document.getElementById("phone");
+    if (phoneInput.value.length == 11) {
+    document.getElementById("phone_error").innerText =
+        "Phone must be 11 digits";
+    return false;
+}
+
+    var dateofbirthInput = document.getElementById("DateoBirth");
+    if (dateofbirthInput.value == "") {
+        document.getElementById("DateoBirth_error").innerText = "please select the date";
+        return false;
+    }
+    return true;
+}
+    </script>
+</body>
+</html>

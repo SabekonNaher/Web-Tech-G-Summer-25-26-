@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<body>
+    <script> 
+        let data=["10",5,"20"];
+        let sum=0;
+
+        function processData(num){
+
+            for (var i=0;i<=data.length;i++) 
+        {
+            if(i===data.length){
+                sum *=2;
+            }
+            else if (typeof data[i]==='string'){
+                console.log (data[i] +num);
+                data[i] =data [i];
+            } 
+            else{
+                sum += data[i];
+                console.log (sum);
+            }
+        }
+
+        }
+        processData(5);
+        console.log("Final Sum: " +sum);
+        console.log("Array: " + data[0]+data[1]+data[2]);
+
+    </script>
+</body>

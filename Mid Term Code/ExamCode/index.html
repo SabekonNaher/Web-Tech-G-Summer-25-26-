@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My E-commerce Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>My E-commerce Site</h1>
+</header>
+
+<table align="center">
+
+<tr>
+
+<td>
+
+<form onsubmit="return validateForm();" action="submit.html" method="post">
+
+<fieldset>
+
+<legend>Item Selection Form</legend>
+
+<label>Item Name</label><br>
+<input type="text" value="Wireless Mouse" readonly>
+
+<br><br>
+
+<label>Unit Price (BDT)</label><br>
+<input type="text" id="price" value="500" readonly>
+
+<br><br>
+
+<label>Quantity</label><br>
+<input type="number" id="quantity" value="1">
+
+<br>
+<span id="quantity_error" class="error"></span>
+
+<br>
+
+<label>Total Price</label><br>
+<input type="text" id="total" readonly>
+
+<br>
+<span id="total_error" class="error"></span>
+
+<br><br>
+
+<input type="submit" value="Calculate Total">
+
+</fieldset>
+
+</form>
+
+</td>
+
+<!-- Checkout Form -->
+
+<td>
+
+<form>
+
+<fieldset>
+
+<legend>Checkout Form</legend>
+
+<label>Name</label><br>
+<input type="text" id="name">
+
+<br><br>
+
+<label>Address</label><br>
+<input type="text" id="address">
+
+<br><br>
+
+<label>Phone Number</label><br>
+<input type="text" id="phone">
+
+<br><br>
+
+<label>Delivery Option</label><br>
+
+<select id="delivery" onchange="deliveryCharge()">
+
+<option value="50">Delivery Inside Dhaka</option>
+
+<option value="100">Delivery Outside Dhaka</option>
+
+</select>
+
+<br><br>
+
+<label>Delivery Charge</label><br>
+
+<input type="text" id="charge" value="50 BDT" readonly>
+
+<br><br>
+
+<input type="checkbox" id="agree" onclick="showButton()">
+
+I agree to all terms and conditions.
+
+<br><br>
+
+<input type="submit" id="submitBtn" value="Submit">
+
+</fieldset>
+
+</form>
+
+</td>
+
+</tr>
+
+</table>
+
+<footer>
+
+<p>© 2026 My E-commerce Site</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+/* External CSS (needs .css file) */
+h1, p, #firstName, .input-style {
+	color: red;
+	background-color: green;
+}
+
+/* <h2> */
+h2 {
+	text-align: right;
+}
+
+/* <p></p> */
+p {
+	font-weight: bold;
+	font-size: 12px;
+	font-family: Arial;
+}
+
+/* <my-heading> */
+#my-heading {
+	border: 5px dashed blue;
+}
+
+.input-style {
+/* #firstName, #lastName { */
+	background-color: grey;
+	border-radius: 5px;
+}
+
+/* universal selector */
+/* * {
+	text-align: center;
+} */
+
+a:visited {
+	color: grey;
+}
+
+a:link {
+	background-color: yellow;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+a:active {
+	font-family: 'Courier New';
+}
+
+#pass:focus {
+	background-color: grey;
+}
+
+a[target] {
+	font-style: italic;
+}
+
+a[target="_self"] {
+	font-size: xx-large;	
+}
+
+/* label[style*="color"] {
+
+} */
+
+h2 {
+	margin: 20px 10px 5px 2px;
+	border: 5px solid red;
+	border-width: ;
+	border-style: ;
+	color: #990088;
+	color: red;
+	color: rgb(255,0,0);
+	color: rgba(255,0,0,0.5)
+}
